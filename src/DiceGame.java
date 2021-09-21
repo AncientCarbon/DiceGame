@@ -3,9 +3,9 @@ public class DiceGame {
     public static void main(String[] args) {
         System.out.println("test");
         int total = 0;
+        int max = 6;
+        int min = 1;
         while (total<40) {
-                int max = 6;
-                int min = 1;
                 int terning1 = (int) Math.floor(Math.random() * (max - min + 1) + min);
                 int terning2 = (int) Math.floor(Math.random() * (max - min + 1) + min);
                 System.out.println("De to terningekast giver " + terning1 + " og " + terning2);
