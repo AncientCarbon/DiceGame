@@ -6,12 +6,13 @@ public class DiceGame {
         int max = 6;
         int min = 1;
         int kast = 0;
-        Dice terning = new Dice();
+        Dice terning = new Dice(6);
+        Dice terningy = new Dice(8);
         while (total < 40) { //bruger et while loop til at blive ved med at kaste terninger
             kast++;
             int terning1 = terning.roll();
             //kopieret fra https://www.educative.io/edpresso/how-to-generate-random-numbers-in-java
-            int terning2 = (int) Math.floor(Math.random() * max + min);
+            int terning2 = terningy.roll();
             //kopieret fra https://www.educative.io/edpresso/how-to-generate-random-numbers-in-java
             System.out.println("De to terningekast giver " + terning1 + " og " + terning2);
             System.out.println("Sammenlagt har du slået " + (terning1 + terning2));
