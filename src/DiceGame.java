@@ -4,9 +4,9 @@ public class DiceGame {
         int total = 0;
         int max = 6;
         int min = 1;
-        int kast = 0;
+        int kast1 = 0;
         while (total<40) { //buger et while loop til at blive ved med at kaste terninger
-            kast++;
+            kast1++;
                 int terning1 = (int) Math.floor(Math.random() * (max - min + 1) + min);
                 //kopieret fra https://www.educative.io/edpresso/how-to-generate-random-numbers-in-java
                 int terning2 = (int) Math.floor(Math.random() * (max - min + 1) + min);
@@ -20,7 +20,7 @@ public class DiceGame {
                 }
                 else {
                     System.out.println("Dit total bliver "+total+". Tillykke, du vandt!");
-                    System.out.println("Det tog " + kast + " kast at få 40+.");
+                    System.out.println("Det tog " + kast1 + " kast at få 40+.");
                     break;
                 }
                 new Scanner(System.in).nextLine(); //der trykkes enter for at køre loopet igen
