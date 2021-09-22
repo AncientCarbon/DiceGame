@@ -2,22 +2,20 @@ import java.util.*;
 
 public class DiceGame {
     public static void main(String[] args) {
-        int total = 0;
         int kast = 0;
-        Dice terning = new Dice(6);
-        Dice terningy = new Dice(6);
-        while (total < 40) { //bruger et while loop til at blive ved med at kaste terninger
-            kast++;
-            int terning1 = terning.roll();
-            //kopieret fra https://www.educative.io/edpresso/how-to-generate-random-numbers-in-java
+        Dice terningx = new Dice(6); //Nyt objekt kaldet terningx laves vha. klassen Dice
+        Dice terningy = new Dice(6); //Nyt objekt kaldet terningy laves vha. klassen Dice
+        for (int total = 0; total  < 40; kast++) { // Bruger et while loop til at blive ved med at kaste terninger
+            int terning1 = terningx.roll();
+            // Bruger terningens funktion roll, som er angivet inde i Dice klassen
             int terning2 = terningy.roll();
-            //kopieret fra https://www.educative.io/edpresso/how-to-generate-random-numbers-in-java
+            // Bruger terningy's funktion roll, som er angivet inde i Dice klassen
             System.out.println("De to terningekast giver " + terning1 + " og " + terning2);
             System.out.println("Sammenlagt har du slået " + (terning1 + terning2));
 
-            total = total + terning1 + terning2; //total bliver ved med at forstørres,
+            total = total + terning1 + terning2; // Total bliver ved med at forstørres,
             // indtil while loopet stopper
-            if ((terning1 + terning2) == 2){ //resetter total hvis 2 er slået
+            if ((terning1 + terning2) == 2){ // Resetter total hvis 2 er slået
                 total = 0;
                 System.out.println("Upsi dupsi der røg dine point");
             }
@@ -28,7 +26,7 @@ public class DiceGame {
                 System.out.println("Det tog " + kast + " kast at få 40+.");
                 break;
             }
-            new Scanner(System.in).nextLine(); //der trykkes enter for at køre loopet igen
+            new Scanner(System.in).nextLine(); // Der trykkes enter for at køre loopet igen
         }
     }
 }
