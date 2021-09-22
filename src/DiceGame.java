@@ -9,15 +9,14 @@ public class DiceGame {
         while (total < 40) { //bruger et while loop til at blive ved med at kaste terninger
             kast++;
             int terning1 = terning.roll();
-            //kopieret fra https://www.educative.io/edpresso/how-to-generate-random-numbers-in-java
             int terning2 = terningy.roll();
-            //kopieret fra https://www.educative.io/edpresso/how-to-generate-random-numbers-in-java
+            int totalterning = terning1 + terning2;
             System.out.println("De to terningekast giver " + terning1 + " og " + terning2);
-            System.out.println("Sammenlagt har du slået " + (terning1 + terning2));
+            System.out.println("Sammenlagt har du slået " + (totalterning));
 
-            total = total + terning1 + terning2; //total bliver ved med at forstørres,
+            total = total + totalterning; //total bliver ved med at forstørres,
             // indtil while loopet stopper
-            if ((terning1 + terning2) == 2){ //resetter total hvis 2 er slået
+            if ((totalterning) == 2){ //resetter total hvis 2 er slået
                 total = 0;
                 System.out.println("Upsi dupsi der røg dine point");
             }
