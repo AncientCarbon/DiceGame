@@ -11,7 +11,7 @@ public class DiceGame {
             int face2 = terning2.roll();
             // Bruger terningy's funktion roll, som er angivet inde i Dice klassen
             int facetotal = face1 + face2;
-            System.out.println("De to terningekast giver " + terning1 + " og " + terning2);
+            System.out.println("De to terningekast giver " + face1 + " og " + face2);
             System.out.println("Sammenlagt har du slået " + facetotal);
 
             total = total + facetotal; // Total bliver ved med at forstørres,
