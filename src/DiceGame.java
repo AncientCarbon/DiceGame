@@ -7,7 +7,7 @@ public class DiceGame {
         int min = 1;
         int kast = 0;
         Dice terning = new Dice(6);
-        Dice terningy = new Dice(8);
+        Dice terningy = new Dice(6);
         while (total < 40) { //bruger et while loop til at blive ved med at kaste terninger
             kast++;
             int terning1 = terning.roll();
