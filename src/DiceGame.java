@@ -3,8 +3,6 @@ import java.util.*;
 public class DiceGame {
     public static void main(String[] args) {
         int total = 0;
-        int max = 6;
-        int min = 1;
         int kast = 0;
         Dice terning = new Dice(6);
         Dice terningy = new Dice(6);
@@ -16,8 +14,13 @@ public class DiceGame {
             //kopieret fra https://www.educative.io/edpresso/how-to-generate-random-numbers-in-java
             System.out.println("De to terningekast giver " + terning1 + " og " + terning2);
             System.out.println("Sammenlagt har du slået " + (terning1 + terning2));
+
             total = total + terning1 + terning2; //total bliver ved med at forstørres,
             // indtil while loopet stopper
+            if ((terning1 + terning2) == 2){ //resetter total hvis 2 er slået
+                total = 0;
+                System.out.println("Upsi dupsi der røg dine point");
+            }
             if (total < 40) {
                 System.out.println("Dit nye total er " + total + ". Vil du slå igen? ");
             } else {
