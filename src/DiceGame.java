@@ -35,7 +35,7 @@ public class DiceGame {
 
             if (terning1==terning2){
                 if (terning1+terning2==2){
-                    System.out.println("selvom du har mistet alle dine point, for du en tur mere");
+                    System.out.println("selvom du har mistet alle dine point, får du en tur mere");
                 }
                 terning1 = terningX.roll();
                 terning2 = terningY.roll();
