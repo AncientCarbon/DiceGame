@@ -9,9 +9,9 @@ public class DiceGame {
         Player player2 = new Player(0);
         Scanner in = new Scanner(System.in);
 //        String name = Player.name;
-        System.out.println("Please enter the name of Player 1");
+        System.out.println("Please skriv your navn spiller one: ");
         player1.name = in.nextLine();
-        System.out.println("Please enter the name of Player 2");
+        System.out.println("Please skriv your navn spiller two: ");
         player2.name = in.nextLine();
 
         while (player1.score < 40 && player2.score < 40) { // Bruger et while loop til at blive ved med at kaste terninger
