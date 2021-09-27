@@ -24,9 +24,8 @@ public class DiceGame {
             System.out.println(player1.name + "'s tur: ");
             new Scanner(System.in).nextLine();
 
-
-//            player1.score = terningX.roll() + terningY.roll();
-//            player2.score = terningX.roll() + terningY.roll();
+//            player1.score += terningx.roll() + terningy.roll();
+//            player2.score += terningx.roll() + terningy.roll();
 // Vil gerne ha den til at give mig en int i stedet for fx Dice@814...
 
             System.out.println(player1.name + " har slået " + terning1 + " og " + terning2);
@@ -58,7 +57,6 @@ public class DiceGame {
 
             if (terning1 + terning2 == 2){ // Resetter total hvis 2 er slået
                 player1.score = 0;
-
             }
             if (terning3 + terning4 == 2){ // Resetter total hvis 2 er slået
                 player2.score = 0;
