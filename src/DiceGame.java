@@ -31,6 +31,8 @@ public class DiceGame {
 
             System.out.println(player1.name + " har slået " + terning1 + " og " + terning2);
             System.out.println("Sammenlagt har " + player1.name + " slået " + (terning1 + terning2));
+            player1.score += terning1 + terning2; // Total bliver ved med at forstørres,
+
             if (terning1==terning2){
                 if (terning1+terning2==2){
                     System.out.println("selvom du har mistet alle dine point, for du en tur mere");
@@ -50,7 +52,7 @@ public class DiceGame {
             System.out.println(player2.name + " har slået " + terning3 + " og " + terning4);
             System.out.println("Sammenlagt har " + player2.name + " slået " + (terning3 + terning4) + "\n");
 
-            player1.score += terning1 + terning2; // Total bliver ved med at forstørres,
+
             player2.score += terning3 + terning4; // indtil while loopet stopper
 
 
@@ -60,17 +62,17 @@ public class DiceGame {
             }
             if (terning3 + terning4 == 2){ // Resetter total hvis 2 er slået
                 player2.score = 0;
-                System.out.println("du slog to 1'ere, du har nu mistet alle dine point");
+                System.out.println("Du slog to 1'ere, du har nu mistet alle dine point");
 
             }
 
             if (terning3==terning4){
                 if (terning3+terning4==2) {
-                    System.out.println("selvom du har mistet alle dine point, for du en tur mere");
+                    System.out.println("Selvom du har mistet alle dine point, får du en tur mere");
                 }
                 terning3 = terningX.roll();
                 terning4 = terningY.roll();
-                System.out.println("Du har slået to af den samme,du for en ekstra tur.");
+                System.out.println("Du har slået to af den samme,du får en ekstra tur.");
                 System.out.println(player2.name + "'s tur");
                 new Scanner(System.in).nextLine();
                 System.out.println(player2.name + " har slået " + terning3 + " og " + terning4);
