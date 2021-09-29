@@ -72,6 +72,10 @@ public class DiceGame {
 
                     player1.score += terning1 + terning2;
                 }
+                if (player2.score > 40 && (terning3 == terning4)) {
+                    System.out.println("Tillykke, " + player2.name + " har vundet!");
+                    break;
+                }
             }
 
             System.out.print("\n" + player2.name + "'s tur:");
@@ -135,12 +139,12 @@ public class DiceGame {
             } else if (player1.score >= 40) {
                 System.out.println(player1.name + " har en score på " + player1.score + ". Nu gælder det om at få to ens");
                 //hvis ikke der er et break skal man trykke enter igen for at stoppe program.
-            } else if (player2.score >= 40) {
+            } else {
                 System.out.println(player2.name + " har en score på " + player2.score + ". Nu gælder det om at få to ens");
             }
         }
 
-        while (player1.score >= 40 || player2.score >= 40) {
+        /* while (player1.score >= 40 || player2.score >= 40) {
             terning1 = terning.roll();
             terning2 = terning.roll();
             terning3 = terning.roll();
@@ -182,6 +186,6 @@ public class DiceGame {
                 System.out.println(player2.name + " fik den endelige score " + player2.score);
                 break;
             }
-        }
+        } */
     }
 }
