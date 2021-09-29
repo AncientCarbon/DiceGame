@@ -33,6 +33,11 @@ public class DiceGame {
             player1.score += terning1 + terning2; // Total bliver ved med at forstørres,
 
             while (terning1 == terning2) { //player 1 slår 2 ens
+                if (player1.score > 40) {
+                    System.out.println("Tillykke, " + player1.name + " har vundet!");
+                    System.out.println("Den sidste score endte på:\n" + player1.name + ": " + player1.score + "\n" + player2.name + ": " + player2.score);
+                    System.exit(0); // i stedet for break
+                }
                 if (terning1 + terning2 == 2) {
                     System.out.println("MEN da du har slået to 1'ere, mister du alle dine point.");
                     player1.score = 0;
@@ -64,17 +69,12 @@ public class DiceGame {
 
                     System.out.println("Du har slået to af den samme, du får en ekstra tur.");
                     System.out.println(player1.name + "'s tur");
-
                     new Scanner(System.in).nextLine();
 
                     System.out.println(player1.name + " har slået " + terning1 + " og " + terning2);
                     System.out.println("Sammenlagt har " + player1.name + " slået " + (terning1 + terning2));
 
                     player1.score += terning1 + terning2;
-                }
-                if (player2.score > 40 && (terning3 == terning4)) {
-                    System.out.println("Tillykke, " + player2.name + " har vundet!");
-                    break;
                 }
             }
 
@@ -88,6 +88,11 @@ public class DiceGame {
             player2.score += terning3 + terning4; // indtil while loopet stopper
 
             while (terning3 == terning4) { // player2 slår 2 ens
+                if (player2.score > 40) {
+                    System.out.println("Tillykke, " + player2.name + " har vundet!");
+                    System.out.println("Den sidste score endte på:\n" + player1.name + ": " + player1.score + "\n" + player2.name + ": " + player2.score);
+                    System.exit(0);
+                }
                 if (terning3 + terning4 == 2) {
                     System.out.println("MEN da du har slået to 1'ere, mister du alle dine point.");
                     player2.score = 0;
@@ -116,7 +121,7 @@ public class DiceGame {
                     terning4 = terning.roll();
 
                     System.out.println("Du har slået to af den samme, du får en ekstra tur. \n");
-                    System.out.print(player2.name + "'s tur");
+                    System.out.println(player2.name + "'s tur");
 
                     new Scanner(System.in).nextLine();
 
@@ -124,68 +129,11 @@ public class DiceGame {
                     System.out.println("Sammenlagt har " + player2.name + " slået " + (terning3 + terning4) + "\n");
 
                     player2.score += terning3 + terning4;
-                    System.out.print(player2.name + " har nu en score på " + player2.score);
-                }
-                if (player2.score > 40 && (terning3 == terning4)) {
-                    System.out.println("Tillykke, " + player2.name + " har vundet!");
-                    break;
                 }
             }
-
-            if (player1.score < 40 && player2.score < 40) { //hvis ingen har vundet fortsætter loop
                 System.out.println(player1.name + " har nu en score på " + player1.score);
                 System.out.println(player2.name + " har nu en score på " + player2.score);
                 System.out.println("Tryk enter for at slå med terningerne igen \n");
-            } else if (player1.score >= 40) {
-                System.out.println(player1.name + " har en score på " + player1.score + ". Nu gælder det om at få to ens");
-                //hvis ikke der er et break skal man trykke enter igen for at stoppe program.
-            } else {
-                System.out.println(player2.name + " har en score på " + player2.score + ". Nu gælder det om at få to ens");
-            }
         }
-
-        /* while (player1.score >= 40 || player2.score >= 40) {
-            terning1 = terning.roll();
-            terning2 = terning.roll();
-            terning3 = terning.roll();
-            terning4 = terning.roll();
-
-            System.out.print(player1.name + "'s tur: ");
-            new Scanner(System.in).nextLine();
-
-            System.out.println(player1.name + " har slået " + terning1 + " og " + terning2);
-            System.out.println("Sammenlagt har " + player1.name + " slået " + (terning1 + terning2));
-            player1.score += terning1 + terning2;
-
-            if (terning1 == terning2 && player1.score >= 40) { //for player1
-                if (terning1 + terning2 == 2) {
-                    System.out.println("Selvom du har mistet alle dine point, får du en tur mere");
-                    player1.score = 0;
-                }
-                System.out.println(player1.name + " har vundet!");
-                System.out.println(player1.name + " fik den endelige score " + player1.score);
-                System.out.println(player2.name + " fik den endelige score " + player2.score);
-                break;
-
-            }
-
-            System.out.print(player2.name + "'s tur");
-            new Scanner(System.in).nextLine();
-
-            System.out.println(player2.name + " har slået " + terning3 + " og " + terning4);
-            System.out.println("Sammenlagt har " + player2.name + " slået " + (terning3 + terning4) + "\n");
-            player2.score += terning3 + terning4;
-
-            if (terning3 == terning4 && player2.score >= 40) { //for player2
-                if (terning3 + terning4 == 2) {
-                    System.out.println("Selvom du har mistet alle dine point, får du en tur mere");
-                    player2.score = 0;
-                }
-                System.out.println(player2.name + " har vundet!");
-                System.out.println(player1.name + " fik den endelige score " + player1.score);
-                System.out.println(player2.name + " fik den endelige score " + player2.score);
-                break;
-            }
-        } */
     }
 }
