@@ -18,16 +18,11 @@ public class DiceGame {
         System.out.println("Player 2 skriv dit navn: ");
         player2.name = in.nextLine();
 
-        int terning1;
-        int terning2;
-        int terning3;
-        int terning4;
-
         while (player1.score < 40 && player2.score < 40) { // Bruger et while loop til at blive ved med at kaste terninger
-            terning1 = terning.roll();
-            terning2 = terning.roll();
-            terning3 = terning.roll();
-            terning4 = terning.roll();
+            int terning1 = terning.roll();
+            int terning2 = terning.roll();
+            int terning3 = terning.roll();
+            int terning4 = terning.roll();
 // Bruger terningens funktion roll, som er angivet inde i Dice klassen
 
             System.out.print(player1.name + "'s tur: ");
