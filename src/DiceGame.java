@@ -1,4 +1,4 @@
-// version 1.3.1
+// version 1.3.2
 import java.util.*;
 
 public class DiceGame {
@@ -140,7 +140,7 @@ public class DiceGame {
 
 
         }
-        while (player1.score >= 40 && player2.score >= 40) {
+        while (player1.score >= 40 || player2.score >= 40) {
             int terning1 = terning.roll();
             int terning2 = terning.roll();
             int terning3 = terning.roll();
@@ -153,27 +153,27 @@ public class DiceGame {
             System.out.println("Sammenlagt har " + player1.name + " slået " + (terning1 + terning2));
             player1.score += terning1 + terning2;
 
+            if (terning1 == terning2) { //for player1
+                System.out.println(player1.name + " har vundet!");
+                System.out.println(player1.name + " fik den endelige score " + player1.score);
+                System.out.println(player2.name + " fik den endelige score " + player2.score);
+                break;
+
+            }
+
             System.out.println("\n" + player2.name + "'s tur");
             new Scanner(System.in).nextLine();
 
             System.out.println(player2.name + " har slået " + terning3 + " og " + terning4);
             System.out.println("Sammenlagt har " + player2.name + " slået " + (terning3 + terning4) + "\n");
 
-            if (terning1 == terning2) {
-                terning1 = terning.roll();
-                terning2 = terning.roll();
-                new Scanner(System.in).nextLine();
-                System.out.println(player1.name + " har nu en score på " + player1.score);
-                System.out.println(player2.name + " har nu en score på " + player2.score);
 
-                if (player1.score >= 40) {
-                    System.out.println(player1.name + " har vundet. Din totale score bliver " + player1.score + ". Tillykke, du vandt!");
-                    break;
-                } else if (player2.score >= 40) {
-                    System.out.println(player2.name + " har vundet. Din totale score bliver " + player2.score + ". Tillykke, du vandt!");
-                    break;
-                }
-                new Scanner(System.in).nextLine(); // Der trykkes enter for at køre loopet igen
+            if (terning3 == terning4) { //for player2
+                System.out.println(player2.name + " har vundet!");
+                System.out.println(player1.name + " fik den endelige score " + player1.score);
+                System.out.println(player2.name + " fik den endelige score " + player2.score);
+                break;
+
             }
         }
     }
