@@ -1,4 +1,4 @@
-// version 1.5.0
+// version 1.5.1
 
 import java.util.*;
 
@@ -18,6 +18,9 @@ public class DiceGame {
         System.out.println("Player 2 skriv dit navn: ");
         player2.name = in.nextLine();
 
+        int a = 0; // bruges til at holde styr på player 1's point
+        int b = 0; // bruges til at holde styr på player 2's point
+
         while (true) { // Bruger et while loop til at blive ved med at kaste terninger
             int terning1 = terning.roll();
             int terning2 = terning.roll();
@@ -25,6 +28,12 @@ public class DiceGame {
             int terning4 = terning.roll();
 // Bruger terningens funktion roll, som er angivet inde i Dice klassen
 
+            if (player1.score >= 40) {
+                while(a == 0) {
+                    a++;
+                    System.out.println(player1.name + " skal nu slå to ens for at vinde spillet");
+                }
+            }
             System.out.print(player1.name + "'s tur: ");
             new Scanner(System.in).nextLine(); //player skal trykke 'enter' for at gå videre i prog.
 
@@ -78,7 +87,13 @@ public class DiceGame {
                 }
             }
 
-            System.out.print("\n" + player2.name + "'s tur:");
+            if (player2.score >= 40) {
+                while(b == 0) {
+                    b++;
+                    System.out.println("\n" + player2.name + " skal nu slå to ens for at vinde spillet");
+                }
+            }
+            System.out.print(player2.name + "'s tur:");
             new Scanner(System.in).nextLine();
 
             System.out.println(player2.name + " har slået " + terning3 + " og " + terning4);
@@ -134,6 +149,7 @@ public class DiceGame {
                 System.out.println(player1.name + " har nu en score på " + player1.score);
                 System.out.println(player2.name + " har nu en score på " + player2.score);
                 System.out.println("Tryk enter for at slå med terningerne igen \n");
+
         }
     }
 }
