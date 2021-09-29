@@ -55,7 +55,7 @@ public class DiceGame {
                 player1.score = 0;
                 System.out.println("Du slog to 1'ere, du har nu mistet alle dine point");
             }
-            if (terning3 + terning4 == 2) {
+            if (terning3 + terning4 == 2){
                 player2.score = 0;
                 System.out.println("Du slog to 1'ere, du har nu mistet alle dine point");
 
