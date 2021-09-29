@@ -125,18 +125,6 @@ public class DiceGame {
                 }
             }
 
-            /*
-            if (terning1 + terning2 == 2){ // Resetter total hvis 2 er slået
-                player1.score = 0;
-                System.out.println("Du slog to 1'ere, du har nu mistet alle dine point");
-            }
-            if (terning3 + terning4 == 2){
-                player2.score = 0;
-                System.out.println("Du slog to 1'ere, du har nu mistet alle dine point");
-
-            }
-            */// Denne del er der ikke brug for mere, da den er lagt under delen med at slå det samme.
-
 
             if (player1.score < 40 && player2.score < 40) { //hvis ingen har vundet fortsætter loop
                 System.out.println(player1.name + " har nu en score på " + player1.score);
