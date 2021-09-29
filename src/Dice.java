@@ -9,7 +9,4 @@ public class Dice {
         // Maksimum værdi på terningen = 6.
         // Minimum værdi på terningen = 1
     }
-
-
-
 }
