@@ -18,7 +18,7 @@ public class DiceGame {
         System.out.println("Player 2 skriv dit navn: ");
         player2.name = in.nextLine();
 
-        while (player1.score < 40 && player2.score < 40) { // Bruger et while loop til at blive ved med at kaste terninger
+        while (true) { // Bruger et while loop til at blive ved med at kaste terninger
             int terning1 = terning.roll();
             int terning2 = terning.roll();
             int terning3 = terning.roll();
