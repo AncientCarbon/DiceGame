@@ -1,4 +1,4 @@
-// version 1.2.0
+// version 1.3.0
 import java.util.*;
 
 public class DiceGame {
@@ -25,6 +25,7 @@ public class DiceGame {
 // Bruger terningens funktion roll, som er angivet inde i Dice klassen
 
             System.out.println(player1.name + "'s tur: ");
+            new Scanner(System.in).nextLine(); //player skal trykke 'enter' for at gå videre i prog.
             new Scanner(System.in).nextLine();
 
             System.out.println(player1.name + " har slået " + terning1 + " og " + terning2);
@@ -129,7 +130,7 @@ public class DiceGame {
                 player1.score = 0;
                 System.out.println("Du slog to 1'ere, du har nu mistet alle dine point");
             }
-            if (terning3 + terning4 == 2){ // Resetter total hvis 2 er slået
+            if (terning3 + terning4 == 2){
                 player2.score = 0;
                 System.out.println("Du slog to 1'ere, du har nu mistet alle dine point");
 
@@ -137,7 +138,7 @@ public class DiceGame {
             */// Denne del er der ikke brug for mere, da den er lagt under delen med at slå det samme.
 
 
-            if (player1.score < 40 && player2.score < 40) {
+            if (player1.score < 40 && player2.score < 40) { //hvis ingen har vundet fortsætter loop
                 System.out.println(player1.name + " har nu en score på " + player1.score);
                 System.out.println(player2.name + " har nu en score på " + player2.score);
                 System.out.println("Tryk enter for at slå med terningerne igen");
@@ -145,7 +146,7 @@ public class DiceGame {
                 System.out.println("I har begge fået 40 eller flere point, derfor er vi alle vindere :D");
             } else if (player1.score >= 40){
                 System.out.println(player1.name + " har vundet. Din totale score bliver " + player1.score + ". Tillykke, du vandt!");
-                break;
+                break; //hvis ikke der er et break skal man trykke enter igen for at stoppe program.
             }
             else if (player2.score >= 40){
                 System.out.println(player2.name + " har vundet. Din totale score bliver " + player2.score + ". Tillykke, du vandt!");
