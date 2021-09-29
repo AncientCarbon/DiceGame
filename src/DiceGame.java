@@ -1,4 +1,5 @@
-// version 1.3.3
+// version 1.4.0
+
 import java.util.*;
 
 public class DiceGame {
@@ -17,24 +18,28 @@ public class DiceGame {
         System.out.println("Player 2 skriv dit navn: ");
         player2.name = in.nextLine();
 
+        int terning1;
+        int terning2;
+        int terning3;
+        int terning4;
+
         while (player1.score < 40 && player2.score < 40) { // Bruger et while loop til at blive ved med at kaste terninger
-            int terning1 = terning.roll();
-            int terning2 = terning.roll();
-            int terning3 = terning.roll();
-            int terning4 = terning.roll();
+            terning1 = terning.roll();
+            terning2 = terning.roll();
+            terning3 = terning.roll();
+            terning4 = terning.roll();
 // Bruger terningens funktion roll, som er angivet inde i Dice klassen
 
-            System.out.println(player1.name + "'s tur: ");
+            System.out.print(player1.name + "'s tur: ");
             new Scanner(System.in).nextLine(); //player skal trykke 'enter' for at gå videre i prog.
-            new Scanner(System.in).nextLine();
 
             System.out.println(player1.name + " har slået " + terning1 + " og " + terning2);
             System.out.println("Sammenlagt har " + player1.name + " slået " + (terning1 + terning2));
             player1.score += terning1 + terning2; // Total bliver ved med at forstørres,
 
-            while (terning1 == terning2 && player1.score < 40) {
+            while (terning1 == terning2) { //player 1 slår 2 ens
                 if (terning1 + terning2 == 2) {
-                    System.out.println("Selvom du har mistet alle dine point, får du en tur mere");
+                    System.out.println("MEN da du har slået to 1'ere, mister du alle dine point.");
                     player1.score = 0;
                 }
 
@@ -62,7 +67,7 @@ public class DiceGame {
                     terning1 = terning.roll();
                     terning2 = terning.roll();
 
-                    System.out.println("Du har slået to af den samme,du for en ekstra tur.");
+                    System.out.println("Du har slået to af den samme, du får en ekstra tur.");
                     System.out.println(player1.name + "'s tur");
 
                     new Scanner(System.in).nextLine();
@@ -71,12 +76,10 @@ public class DiceGame {
                     System.out.println("Sammenlagt har " + player1.name + " slået " + (terning1 + terning2));
 
                     player1.score += terning1 + terning2;
-
-                    System.out.println(player1.name + " har nu en score på " + player1.score);
                 }
             }
 
-            System.out.println("\n" + player2.name + "'s tur");
+            System.out.print("\n" + player2.name + "'s tur:");
             new Scanner(System.in).nextLine();
 
             System.out.println(player2.name + " har slået " + terning3 + " og " + terning4);
@@ -85,10 +88,9 @@ public class DiceGame {
 
             player2.score += terning3 + terning4; // indtil while loopet stopper
 
-
-            while (terning3 == terning4 && player2.score < 40) {
+            while (terning3 == terning4) { // player2 slår 2 ens
                 if (terning3 + terning4 == 2) {
-                    System.out.println("Selvom du har mistet alle dine point, får du en tur mere");
+                    System.out.println("MEN da du har slået to 1'ere, mister du alle dine point.");
                     player2.score = 0;
                 }
                 if (terning3 + terning4 == 12) {
@@ -114,8 +116,8 @@ public class DiceGame {
                     terning3 = terning.roll();
                     terning4 = terning.roll();
 
-                    System.out.println("Du har slået to af den samme,du får en ekstra tur.");
-                    System.out.println(player2.name + "'s tur");
+                    System.out.println("Du har slået to af den samme, du får en ekstra tur. \n");
+                    System.out.print(player2.name + "'s tur");
 
                     new Scanner(System.in).nextLine();
 
@@ -123,15 +125,18 @@ public class DiceGame {
                     System.out.println("Sammenlagt har " + player2.name + " slået " + (terning3 + terning4) + "\n");
 
                     player2.score += terning3 + terning4;
-
-                    System.out.println(player2.name + " har nu en score på " + player2.score);
+                    System.out.print(player2.name + " har nu en score på " + player2.score);
+                }
+                if (player2.score > 40 && (terning3 == terning4)) {
+                    System.out.println("Tillykke, " + player2.name + " har vundet!");
+                    break;
                 }
             }
 
             if (player1.score < 40 && player2.score < 40) { //hvis ingen har vundet fortsætter loop
                 System.out.println(player1.name + " har nu en score på " + player1.score);
                 System.out.println(player2.name + " har nu en score på " + player2.score);
-                System.out.println("Tryk enter for at slå med terningerne igen");
+                System.out.println("Tryk enter for at slå med terningerne igen \n");
             } else if (player1.score >= 40) {
                 System.out.println(player1.name + " har en score på " + player1.score + ". Nu gælder det om at få to ens");
                 //hvis ikke der er et break skal man trykke enter igen for at stoppe program.
@@ -141,19 +146,19 @@ public class DiceGame {
         }
 
         while (player1.score >= 40 || player2.score >= 40) {
-            int terning1 = terning.roll();
-            int terning2 = terning.roll();
-            int terning3 = terning.roll();
-            int terning4 = terning.roll();
+            terning1 = terning.roll();
+            terning2 = terning.roll();
+            terning3 = terning.roll();
+            terning4 = terning.roll();
 
-            System.out.println(player1.name + "'s tur: ");
+            System.out.print(player1.name + "'s tur: ");
             new Scanner(System.in).nextLine();
 
             System.out.println(player1.name + " har slået " + terning1 + " og " + terning2);
             System.out.println("Sammenlagt har " + player1.name + " slået " + (terning1 + terning2));
             player1.score += terning1 + terning2;
 
-            if (terning1 == terning2) { //for player1
+            if (terning1 == terning2 && player1.score >= 40) { //for player1
                 if (terning1 + terning2 == 2) {
                     System.out.println("Selvom du har mistet alle dine point, får du en tur mere");
                     player1.score = 0;
@@ -165,14 +170,14 @@ public class DiceGame {
 
             }
 
-            System.out.println("\n" + player2.name + "'s tur");
+            System.out.print(player2.name + "'s tur");
             new Scanner(System.in).nextLine();
 
             System.out.println(player2.name + " har slået " + terning3 + " og " + terning4);
             System.out.println("Sammenlagt har " + player2.name + " slået " + (terning3 + terning4) + "\n");
             player2.score += terning3 + terning4;
 
-            if (terning3 == terning4) { //for player2
+            if (terning3 == terning4 && player2.score >= 40) { //for player2
                 if (terning3 + terning4 == 2) {
                     System.out.println("Selvom du har mistet alle dine point, får du en tur mere");
                     player2.score = 0;
