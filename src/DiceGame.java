@@ -13,6 +13,7 @@ public class DiceGame {
         Player player1 = new Player(in.nextLine());
         System.out.println("Player 2 skriv dit navn: ");
         Player player2 = new Player(in.nextLine());
+        System.out.println("I spiller til 40 point. Den første der slår 2 af den samme efter 40 point vinder.\nTryk 'Enter' for at rulle med terningerne\n");
 
         int a = 0; // bruges til at holde styr på player 1's point
         int b = 0; // bruges til at holde styr på player 2's point
@@ -30,7 +31,7 @@ public class DiceGame {
                     System.out.println(player1.name + " skal nu slå to ens for at vinde spillet");
                 }
             }
-            System.out.print(player1.name + "'s tur: (Tryk enter for at tage din tur)");
+            System.out.print(player1.name + "'s tur: ");
             new Scanner(System.in).nextLine(); //player skal trykke 'enter' for at gå videre i prog.
 
             System.out.println(player1.name + " har slået " + faceValue1 + " og " + faceValue2);
@@ -89,7 +90,7 @@ public class DiceGame {
                     System.out.println("\n" + player2.name + " skal nu slå to ens for at vinde spillet");
                 }
             }
-            System.out.print("\n" + player2.name + "'s tur: (Tryk enter for at tage din tur)");
+            System.out.print("\n" + player2.name + "'s tur: ");
             new Scanner(System.in).nextLine();
 
             System.out.println(player2.name + " har slået " + faceValue3 + " og " + faceValue4);
