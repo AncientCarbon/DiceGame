@@ -2,8 +2,8 @@
 import java.util.*;
 public class DiceTest {
     public static void main(String[] args) {
-        Dice terning1 = new Dice(6);
-        Dice terning2 = new Dice(6);
+        Die terning1 = new Die(6);
+        Die terning2 = new Die(6);
         System.out.print("Hvor mange gange vil du kaste de to terninger?: ");
         Scanner in = new Scanner(System.in);
 

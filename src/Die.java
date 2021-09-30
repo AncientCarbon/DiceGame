@@ -1,7 +1,7 @@
-public class Dice {
+public class Die {
     int sides; //starter med værdien 0
 
-    public Dice(int _sides){
+    public Die(int _sides){
         this.sides = _sides; // sides angives som det givne _sides, som bliver givet i Dicegame-klassen
     }
 
