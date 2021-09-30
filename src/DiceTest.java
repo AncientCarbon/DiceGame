@@ -1,4 +1,4 @@
-//version 1.2.1
+//version 1.2.2
 import java.util.*;
 public class DiceTest {
     public static void main(String[] args) {
@@ -6,6 +6,7 @@ public class DiceTest {
         Dice terning2 = new Dice(6);
         System.out.print("Hvor mange gange vil du kaste de to terninger?: ");
         Scanner in = new Scanner(System.in);
+
         int a = in.nextInt();
 
         System.out.println("Forventet totalværdi: ~" + (7*a/2));
@@ -67,7 +68,7 @@ public class DiceTest {
                 else face6 += 1;
             }
         }
-        System.out.println("Forventet totalværdi: ~" + (7*a/2));
+        System.out.println("Forventet totalværdi: " + (7*a/2));
         System.out.println("Forventet antal kast per terning: " + (2*a/6));
         System.out.println("\nTerning 1 total: " + total1);
         System.out.println("Terning 2 total: " + total2);
