@@ -1,13 +1,16 @@
-//version 1.1.1
+//version 1.2.1
 import java.util.*;
 public class DiceTest {
     public static void main(String[] args) {
         Dice terning1 = new Dice(6);
         Dice terning2 = new Dice(6);
+        System.out.print("Hvor mange gange vil du kaste de to terninger?: ");
+        Scanner in = new Scanner(System.in);
+        int a = in.nextInt();
 
-        System.out.println("Forventet totalværdi: ~3500");
-        System.out.println("Forventet antal kast per terning");
-        System.out.print("Tryk enter for at kaste 1000 gange: ");
+        System.out.println("Forventet totalværdi: ~" + (7*a/2));
+        System.out.println("Forventet antal kast per terning: " + (2*a/6));
+        System.out.print("Tryk enter for at kaste " + a + " gange: ");
         new Scanner(System.in).nextLine();
 
         int total1 = 0; // tjekker hvad den totale værdi af alle terning1 og terning2 kast er
@@ -19,7 +22,7 @@ public class DiceTest {
         int face5 = 0;
         int face6 = 0;
 
-        for(int t = 0; t < 1000; t++){ // loop kører 1000 gange præcis
+        for(int t = 0; t < a; t++){ // loop kører 1000 gange præcis
             int t1 = terning1.roll();
             int t2 = terning2.roll();
             System.out.println(t1 + ", " + t2);
@@ -64,7 +67,9 @@ public class DiceTest {
                 else face6 += 1;
             }
         }
-        System.out.println("Terning 1 total: " + total1);
+        System.out.println("Forventet totalværdi: ~" + (7*a/2));
+        System.out.println("Forventet antal kast per terning: " + (2*a/6));
+        System.out.println("\nTerning 1 total: " + total1);
         System.out.println("Terning 2 total: " + total2);
 
         System.out.println("\nAntal fra hver side:\n1'ere: " + face1 + "\n2'ere: " + face2 +
