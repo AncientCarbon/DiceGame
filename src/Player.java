@@ -5,6 +5,5 @@ public class Player {
     public Player(int score){
         this.score = score;
         this.name = name;
-
     }
 }
