@@ -7,16 +7,12 @@ public class DiceGame {
 
         Dice terning = new Dice(6); //Nyt objekt kaldet terning laves vha. klassen Dice
 
-        Player player1 = new Player(0);
-        Player player2 = new Player(0);
-
         Scanner in = new Scanner(System.in);
 
         System.out.println("Player 1 skriv dit navn: ");
-        player1.name = in.nextLine();
-
+        Player player1 = new Player(in.nextLine());
         System.out.println("Player 2 skriv dit navn: ");
-        player2.name = in.nextLine();
+        Player player2 = new Player(in.nextLine());
 
         int a = 0; // bruges til at holde styr på player 1's point
         int b = 0; // bruges til at holde styr på player 2's point
@@ -34,7 +30,7 @@ public class DiceGame {
                     System.out.println(player1.name + " skal nu slå to ens for at vinde spillet");
                 }
             }
-            System.out.print(player1.name + "'s tur: ");
+            System.out.print(player1.name + "'s tur: (Tryk enter for at tage din tur)");
             new Scanner(System.in).nextLine(); //player skal trykke 'enter' for at gå videre i prog.
 
             System.out.println(player1.name + " har slået " + faceValue1 + " og " + faceValue2);
@@ -93,7 +89,7 @@ public class DiceGame {
                     System.out.println("\n" + player2.name + " skal nu slå to ens for at vinde spillet");
                 }
             }
-            System.out.print(player2.name + "'s tur:");
+            System.out.print("\n" + player2.name + "'s tur: (Tryk enter for at tage din tur)");
             new Scanner(System.in).nextLine();
 
             System.out.println(player2.name + " har slået " + faceValue3 + " og " + faceValue4);
