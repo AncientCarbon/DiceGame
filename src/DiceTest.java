@@ -1,4 +1,4 @@
-//version 1.2.2
+//version 1.2.3
 import java.util.*;
 public class DiceTest {
     public static void main(String[] args) {
@@ -11,7 +11,7 @@ public class DiceTest {
 
         System.out.println("Forventet totalværdi: ~" + (7*a/2));
         System.out.println("Forventet antal kast per terning: " + (2*a/6));
-        System.out.print("Tryk enter for at kaste " + a + " gange: ");
+        System.out.print("Tryk enter for at kaste terningerne" + a + " gange: ");
         new Scanner(System.in).nextLine();
 
         int total1 = 0; // tjekker hvad den totale værdi af alle terning1 og terning2 kast er
