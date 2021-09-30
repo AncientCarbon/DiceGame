@@ -5,7 +5,7 @@ import java.util.*;
 public class DiceGame {
     public static void main(String[] args) {
 
-        Dice terning = new Dice(6); //Nyt objekt kaldet terning laves vha. klassen Dice
+        Die terning = new Die(6); //Nyt objekt kaldet terning laves vha. klassen Dice
 
         Scanner in = new Scanner(System.in);
 
