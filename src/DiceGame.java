@@ -128,7 +128,7 @@ public class DiceGame {
                     player2.score += terning3 + terning4;
                     if (terning3 + terning4 == 12) {
                         System.out.println("Du vandt, " + player2.name); //der skal kastes igen, hvis det bliver 12 igen vinder man
-                        break;
+                        System.exit(0);
                     }
                 } else if ((terning3 + terning4) < 11) {
 
